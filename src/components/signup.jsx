@@ -49,6 +49,7 @@ export function Signup() {
           className='signup-input'
           required
           onChange={e => setName(e.target.value)}
+          autoComplete="name"
         />
 
         <label>Email Address</label>
@@ -58,7 +59,7 @@ export function Signup() {
           className='signup-input'
           required
           onChange={e => setEmail(e.target.value)}
-
+          autoComplete="email"
         />
 
         <label>Password</label>
@@ -68,6 +69,7 @@ export function Signup() {
           className='signup-input'
           required
           onChange={e => setPassword(e.target.value)}
+          autoComplete="new-password"
         />
 
         <button type='submit' className='signup-button' disabled={loading}>

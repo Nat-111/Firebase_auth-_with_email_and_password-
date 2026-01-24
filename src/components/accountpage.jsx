@@ -37,7 +37,7 @@ export function Accountpage() {
 
 
       <div className="user-email-badge" style={{ marginBottom: '2rem', display: 'block', textAlign: 'center' }}>
-        {user?.email}
+        Welcome, {user.displayName}
       </div>
 
       <button

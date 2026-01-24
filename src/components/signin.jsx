@@ -11,11 +11,13 @@ export default function Signin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    setLoading(true)
     try {
       await signIn(email, password)
       navigate('/accountpage')
@@ -23,6 +25,7 @@ export default function Signin() {
       const friendlyMessage = getFriendlyErrorMessage(err.code || err.message);
       setError(friendlyMessage);
       console.error(err);
+      setLoading(false)
     }
   }
 
@@ -41,10 +44,19 @@ export default function Signin() {
         <form className=' signup-form ' onSubmit={handleSubmit} >
 
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" placeholder='Enter your email' className=' signup-input ' required onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" id="email" placeholder='Enter your email' className=' signup-input ' required onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
           <label htmlFor="password">Password:</label>
-          <input type="password" id="password" placeholder='Enter your password' className=' signup-input ' required onChange={(e) => setPassword(e.target.value)} />
-          <button type='submit' className=' signin-button '>Sign In</button>
+          <input type="password" id="password" placeholder='Enter your password' className=' signup-input ' required onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
+          <button type='submit' className=' signin-button ' disabled={loading}>
+            {loading ? (
+              <>
+                <div className="loading-spinner"></div>
+                Signing In...
+              </>
+            ) : (
+              "Sign In"
+            )}
+          </button>
 
         </form>
 
