@@ -286,3 +286,156 @@ body {
   border-radius: 50%;
   margin: 0 auto 1.5rem;
 }
+
+/* Secondary Button (for Resend Email) */
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: #9ca3af;
+  color: #9ca3af;
+}
+
+/* Link Button (for "Use different email") */
+.btn-link {
+  background: transparent;
+  color: var(--text-muted);
+  padding: 12px;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  width: 100%;
+  margin-top: 0;
+}
+
+.btn-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Verify Actions Container */
+.verify-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Verify Page Layout */
+.verify-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.verify-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.verify-body {
+  margin-bottom: 1.5rem;
+}
+
+.instruction-text {
+  color: var(--text-main);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.user-email-badge {
+  background: #f3f4f6;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
+.subtext {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+/* Feedback alerts */
+.feedback-alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.feedback-alert.success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid rgba(6, 95, 70, 0.2);
+}
+
+.feedback-alert.error-box {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid rgba(153, 27, 27, 0.2);
+}
+
+/* Help Footer */
+.help-footer {
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.help-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.help-footer a:hover {
+  text-decoration: underline;
+}
