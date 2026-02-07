@@ -6,9 +6,7 @@ import Signin from './components/signin'
 import { Accountpage } from './components/accountpage'
 import ProtectedRoute from './components/protectedroute'
 import VerifyEmail from './components/verify-email'
-import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Footer from './components/Footer'
 
 function App() {
 
@@ -16,7 +14,6 @@ function App() {
   return (
     <>
       <AuthContextProvider>
-        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<Signin />} />
@@ -27,7 +24,6 @@ function App() {
             <Route path="/accountpage" element={<Accountpage />} />
           </Route>
         </Routes>
-        <Footer />
       </AuthContextProvider>
     </>
   )
